@@ -1,14 +1,12 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
-import postReduser from "./posts/reducer";
-import todoReduser from "./todos/reducer";
+import todoReduser from "./todo/reducer";
 import logger from "redux-logger";
+import thunk from "redux-thunk"
 
 const rootReducer = combineReducers({
   todos: todoReduser,
-  posts: postReduser,
 });
-
-const enhacer = applyMiddleware(logger);
+const enhacer = applyMiddleware(logger, thunk);
 const store = createStore(rootReducer, enhacer);
 
 export default store;

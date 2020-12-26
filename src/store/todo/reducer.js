@@ -9,7 +9,7 @@ const initState = {
   loading: false,
 };
 
-export default function postReducer(state = initState, action) {
+export default function todoReducer(state = initState, action) {
   const { type, payload } = action;
   switch (type) {
     case GET_TODOS_REQUEST:
